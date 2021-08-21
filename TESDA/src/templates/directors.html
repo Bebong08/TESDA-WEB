@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Directors</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Directors</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+      <!-- ======= Chefs Section ======= -->
+      <section id="chefs" class="chefs">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>The <span>Directors</span></h2>
+            <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p> -->
+          </div>
+  
+          <div class="row">
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="member">
+                                <div class="pic"><img src="" class="img-fluid" alt=""></div>
+              </div>
+            </div>
+
+            {% for obj in latest %}
+            <div class="col-lg-6 col-md-6">
+              <div class="member">
+                
+                <div class="pic"><img src="{{ obj.picture.url }}" class="img-fluid" alt=""></div>
+                
+                <!-- <div class="member-info">
+                  <h4>{{ obj.name }}</h4>
+                  <span>Patissier</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            {% endfor %}
+
+            <div class="col-lg-3 col-md-6">
+              <div class="member">
+                                <div class="pic"><img src="" class="img-fluid" alt=""></div>
+              </div>
+            </div>
+
+
+
+          
+            {% for obj in QSS %}
+            <div class="col-lg-4 col-md-6">
+              <div class="member">
+                <div class="pic"><img src="{{ obj.picture.url }}" class="img-fluid" alt=""></div>
+              </div>
+              <!-- <div class="member">
+                <div class="pic"><img src="{% static 'assets/img/chefs/chefs-3.jpg' %}" class="img-fluid" alt=""></div>
+                <div class="member-info">
+                  <h4>William Anderson</h4>
+                  <span>Cook</span>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            {% endfor %}
+          </div>
+  
+        </div>
+      </section><!-- End Chefs Section -->
+  
+  </main><!-- End #main -->
+
+  
+  {% endblock content %}

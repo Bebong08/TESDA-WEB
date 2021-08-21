@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>EGACE</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">tti</a></li>
+            
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section id="specials" class="specials">
+        <div class="container">
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <!-- <select class="mdb-select md-form" placeholder="Select Center" name="featured">
+                                {% for obj in Qualifications %}
+                                    <option value="1">{{ obj.center }}</option>
+                                  
+                                  
+                                {% endfor %}
+                                  </select> -->
+                                  <!-- <input type="submit" name="featured" value="Filter" /> -->
+                            </div>
+                             
+                            <div class="col-sm-4">
+                               
+                                <div class="search-box"  name="search" >
+                                     
+                                    <i class="material-icons">&#xE8B6;</i>
+                                    <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search&hellip;">
+                                    <!-- <div> <input type="submit"></div> -->
+                                </div>  
+                        
+                            </div>
+                          
+                        
+                        </div>
+                    </div>
+                  
+                    <table class="table table-striped table-hover table-bordered" id="myTable">
+                        <thead><h1>Year 2021</h1>
+                            <tr style="background-color:#0d6efd">
+                                <!-- <th>#</th> -->
+                                <th><font color="#fff">Month</font></th>
+                                <th><font color="#fff">Enrolled</font></th>
+                                <th><font color="#fff">Percentage</font></th>
+                                <th><font color="#fff">Graduate</font></th>
+                                <th><font color="#fff">Percentage</font></th>
+                                <th><font color="#fff">Assessed</font></th>
+                                <th><font color="#fff">Percentage</font></th>
+                                <th><font color="#fff">Certified</font></th>
+                                <th><font color="#fff">Percentage</font></th>
+                                <th><font color="#fff">Employed</font></th>
+                                <th><font color="#fff">Percentage</font></th>
+                               
+                                <!-- <th>Actions</th> -->
+                            </tr>
+                        </thead>
+                     
+                        <tbody>
+                            <!-- {% for obj in NC %}
+                                    
+                            <tr>
+                                
+                                <td>{{ obj.lastname }}</td>
+                                <td>{{ obj.firstname }}</td>
+                                <td>{{ obj.middlename }}</td>
+                                <td>{{ obj.extname }}</td>
+                                <td>{{ obj.certType }}</td>
+                                <td>{{ obj.NCTitle }}</td>
+                                <td>{{ obj.COCTitle }}</td>
+                                <td>{{ obj.date_released }}</td>
+                                <td>{{ obj.expiration_date }}</td>
+                            
+                            </tr>
+                            {% endfor %} -->
+
+                        {% for obj in EG %}
+                            <tr>
+                                
+                                <td><b>{{ obj.months }}</b></td>
+                                <td>{{ obj.enrolled  }}</td>
+                                <td>{{ obj.perc_enrolled }}%</td>
+                                <td>{{ obj.graduate }}</td>
+                                <td>{{ obj.perc_graduate }}%</td>
+                                <td>{{ obj.assessed }}</td>
+                                <td>{{ obj.perc_assessed }}%</td>
+                                <td>{{ obj.certified }}</td>
+                                <td>{{ obj.perc_certified }}%</td>
+                                <td>{{ obj.employed }}</td>
+                                <td>{{ obj.perc_employed }}%</td>
+                            
+                            </tr>
+                        {% endfor %}   
+                        </tbody>
+                                    
+                         
+                    </table>
+
+                    <div class="clearfix">
+                        <!-- <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div> -->
+                        <ul class="pagination">
+                            {% if NC.has_previous %}
+                            <li class="page-item"><a href="?{{ page_request_var }}={{ NC.previous_page_number }}"><i class="fa fa-angle-double-left"></i></a></li>
+                            {% endif %}
+                            <li class="page-item active"><a href="?{{ page_request_var }}={{ NC.number }}" class="page-link">{{ NC.number }}</a></li>
+                            {% if NC.has_next %}
+                            <li class="page-item"><a href="?{{ page_request_var }}={{ NC.next_page_number }}" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+
+                    <div class="blog-pagination">
+                        <ul class="justify-content-center">
+                          {% if obj.has_previous %}
+                          <li><a href="?{{ page_requet_var }}={{ obj.previous_page_number }}"><i class="bi bi-chevron-left"></i></a></li>
+                          {% endif %}
+                          <li class="active"><a href="#">{{ obj.number }}</a></li>
+                          {% if obj.has_next %}
+                          <li><a href="?{{ page_requet_var }}={{ obj.next_page_number }}"><i class="bi bi-chevron-right"></i></a></li>
+                          {% endif %}
+                        </ul>
+                      </div>
+                </div>
+            </div>        
+        </div> 
+    </section>
+
+</main>
+
+{% endblock content %}

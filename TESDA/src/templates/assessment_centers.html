@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Assessment Centers</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">tti</a></li>
+            
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section id="specials" class="specials">
+        <div class="container">
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <!-- <select class="mdb-select md-form" placeholder="Select Center" name="featured">
+                                {% for obj in Qualifications %}
+                                    <option value="1">{{ obj.center }}</option>
+                                  
+                                  
+                                {% endfor %}
+                                  </select> -->
+                                  <!-- <input type="submit" name="featured" value="Filter" /> -->
+                            </div>
+                             
+                            <div class="col-sm-4">
+                               
+                                <div class="search-box"  name="search" >
+                                     
+                                    <i class="material-icons">&#xE8B6;</i>
+                                    <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search&hellip;">
+                                    <!-- <div> <input type="submit"></div> -->
+                                </div>  
+                        
+                            </div>
+                          
+                        
+                        </div>
+                    </div>
+                  
+                    <table class="table table-striped table-hover table-bordered" id="myTable">
+                        <thead>
+                            <tr>
+                                <!-- <th>#</th> -->
+                                <th>Assessment Center <i class="fa fa-sort"></i></th>
+                                <th>Qualifications<i class="fa fa-sort"></i></th>
+                                <th>Center Type<i class="fa fa-sort"></i></th>
+                                <th>Status <i class="fa fa-sort"></i></th>
+                               
+                                <!-- <th>Actions</th> -->
+                            </tr>
+                        </thead>
+                     
+                        <tbody>
+                            {% for obj in AC %}
+                                    
+                            <tr>
+                                {% for center in obj.trainingcenter.all %}
+                                <td>{{ center }}</td>
+                                {% endfor %}
+                      <!--       {{ obj.trainingcenter }}</td>-->
+                                <td>{{ obj.description }}</td>
+                                {% for class in obj.centerclass.all %}
+                                <td>{{ class }}</td>
+                                {% endfor %}
+                               
+                                {% if obj.status == True %}
+                                <td>Active</td>
+                                {% else %}
+                                <td>Inactive</td>
+
+                                {% endif %}
+
+                            
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                                    
+                         
+                    </table>
+
+                    <div class="clearfix">
+                        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div> 
+                        <ul class="pagination">
+                            {% if AC.has_previous %}
+                            <li class="page-item"><a href="?{{ page_request_var }}={{ center.previous_page_number }}"><i class="fa fa-angle-double-left"></i></a></li>
+                            {% endif %}
+                            <li class="page-item active"><a href="?{{ page_request_var }}={{ center.number }}" class="page-link">{{ center.number }}</a></li>
+                            {% if center.has_next %}
+                            <li class="page-item"><a href="?{{ page_request_var }}={{ center.next_page_number }}" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+
+                    <div class="blog-pagination">
+                        <ul class="justify-content-center">
+                          {% if obj.has_previous %}
+                          <li><a href="?{{ page_requet_var }}={{ obj.previous_page_number }}"><i class="bi bi-chevron-left"></i></a></li>
+                          {% endif %}
+                          <li class="active"><a href="#">{{ obj.number }}</a></li>
+                          {% if obj.has_next %}
+                          <li><a href="?{{ page_requet_var }}={{ obj.next_page_number }}"><i class="bi bi-chevron-right"></i></a></li>
+                          {% endif %}
+                        </ul>
+                      </div>
+                </div>
+            </div>        
+        </div> 
+    </section>
+
+</main>
+
+{% endblock content %}

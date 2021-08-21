@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Gallery</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Gallery</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+  <!-- ======= Gallery Section ======= -->
+  <section id="gallery" class="gallery">
+    <div class="container-fluid">
+
+      <div class="section-title">
+        <h2>Some photos from <span>TESDA-Davao Oriental</span></h2>
+        <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p> -->
+      </div>
+
+      <div class="row no-gutters">
+
+        {% for obj in QS %}
+        <div class="col-lg-3 col-md-4">
+          <div class="gallery-item">
+            <a href="{{ obj.picture.url }}" class="gallery-lightbox">
+              <img src="{{ obj.picture.url }}" alt="" class="img-fluid"> 
+            </a>
+            <!-- <h2>{{ obj.title }}</h2>
+            <p>{{ obj.description }}</p> -->
+          </div>
+          
+        </div>
+        {% endfor %}
+     
+
+      </div>
+
+    </div>
+  </section><!-- End Gallery Section -->
+
+</main>
+
+{% endblock content %}

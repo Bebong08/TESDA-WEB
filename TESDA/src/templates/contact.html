@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+  
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Contact</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Contact</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+     <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2><span>Contact</span> Us</h2>
+            <p>There's nothing we love in the world more than hearing from people like you. Positive stuff, helpful feed back on the site or just a note about 
+              literally anything in your mind. We want to hear it. We promise to respond too because there's nothing worse than sending a note like this
+              to us and not hearing back.</p>
+          </div>
+        </div>
+  
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2017.0514839929913!2d126.22627459208258!3d6.948380000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fbc99903c07795%3A0x3c6dbfada3ceb215!2sTechnical%20Education%20and%20Skills%20Development%20Authority%20(TESDA)%20-%20Davao%20Oriental%20Provincial%20Office!5e1!3m2!1sen!2sph!4v1618032096777!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+  
+        <div class="container mt-5">
+  
+          <div class="info-wrap">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 info">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Government Center Dahican,<br>Mati, Davao Oriental <br>Philippines </p>
+              </div>
+  
+              <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                <i class="bi bi-clock"></i>
+                <h4>Open Hours:</h4>
+                <p>Monday-Friday:<br>08:00 AM - 05:00 PM</p>
+              </div>
+  
+              <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>region11.davaooriental@tesda.gov.ph</p>
+              </div>
+  
+              <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>T: (087) 388-3817<br>TF: (087) 811-4399</p>
+              </div>
+            </div>
+          </div>
+  
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+  
+        </div>
+      </section><!-- End Contact Section -->
+  
+  </main><!-- End #main -->
+
+  
+  {% endblock content %}

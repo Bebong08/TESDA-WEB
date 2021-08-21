@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+
+<section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+{% if eadetails %}
+{% for detail in eadetails %}
+
+<div class="col-lg-8 entries">
+     
+          <article class="entry">
+
+            <div class="entry-img">
+              <img src="{{ obj.picture.url }}" alt="" class="img-fluid">
+            </div> 
+
+            <h2 class="entry-title">
+              <a href="{{ obj.get_absolute.url }}">{{ obj.title }}</a>
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="/news">{{ obj.author }}</a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="/news"><time datetime="2020-01-01">{{ obj.timestamp|timesince }} ago</time></a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="/news">{{ obj.comment_count }} Comments</a></li>
+              </ul>
+            </div>
+
+            <form action="/event/" method="POST" id="systemForm">
+            <div class="entry-content">
+              <p>
+                {{ details.content }}
+              </p>
+              <div class="read-more">
+                <!-- <a href="{% url 'det_Stories' %}">Read More</a> -->
+              </div>
+            </div>
+          </form>
+
+          </article>
+      
+         
+          {% endfor %}
+          {% else %}
+          {% endif %}
+        
+
+        </div> -->
+
+   
+
+      </div>
+
+    </div>
+  </section><!-- End Blog Section -->
+
+{% endblock %}

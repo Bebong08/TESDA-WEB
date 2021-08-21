@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content %}
+  
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>About</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>About</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+     <!-- ======= Specials Section ======= -->
+     <section id="specials" class="specials">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>All about!<br><span>Tesda - Davao Oriental</span></h2>
+          <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p> -->
+        </div>
+        {% for obj in QS %}
+        <div class="row">
+          {% if forloop.counter == 1 %}
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+             
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-{{ forloop.counter }}">{{ obj.title }}</a>
+              </li>
+             
+             <!--  <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Vision</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Values Statement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Quality Policy</a>
+              </li> -->
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-{{ forloop.counter }}">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <!-- <h3>Architecto ut aperiam autem id</h3> -->
+                    <!-- <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> -->
+                    <p>{{ obj.description|safe }}<br><br><br><br></p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/specials-1.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+             
+   
+        
+            </div>
+          </div>
+          {% else %}
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+             
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-{{ forloop.counter }}">{{ obj.title }}</a>
+              </li>
+             
+             <!--  <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Vision</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Values Statement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Quality Policy</a>
+              </li> -->
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show"  id="tab-{{ forloop.counter }}">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <!-- <h3>Architecto ut aperiam autem id</h3> -->
+                    <!-- <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> -->
+                    <p>{{ obj.description|safe }}<br><br><br><br></p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/specials-1.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section><!-- End Specials Section -->
+  </main><!-- End #main -->
+
+  
+  {% endblock content %}
