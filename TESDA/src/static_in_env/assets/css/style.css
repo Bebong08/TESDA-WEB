@@ -2213,7 +2213,7 @@ table.table td i {
   padding-top: 6px
 }
 .hint-text {
-  float: left;
+  float: left; 
   margin-top: 6px;
   font-size: 95%;
 }    
